@@ -1,0 +1,740 @@
+import type { Product } from "@/types";
+
+export const products: Product[] = [
+  // ---------------- Diesel Generator Sets ----------------
+  {
+    slug: "snj-dg-40",
+    name: "SNJ DG-40",
+    category: "diesel-generator-sets",
+    tagline: "40 kVA silent diesel genset for small commercial sites.",
+    description:
+      "A compact, acoustically enclosed diesel generator set built for shops, clinics, and small offices that need reliable standby power without a dedicated plant room.",
+    kvaRange: [32, 40],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Standby"],
+    industries: ["real-estate-commercial", "hospitality"],
+    specs: [
+      { label: "Prime Power", value: "36 kVA / 29 kW" },
+      { label: "Standby Power", value: "40 kVA / 32 kW" },
+      { label: "Alternator", value: "Brushless, self-exciting" },
+      { label: "Fuel Tank", value: "95 L base-frame mounted" },
+      { label: "Sound Enclosure", value: "75 dB(A) @ 1m" },
+      { label: "Control Panel", value: "Digital, AMF-ready" },
+    ],
+    features: [
+      "Weatherproof acoustic enclosure",
+      "AMF panel compatible",
+      "8-hour runtime on base tank at 75% load",
+      "Compact footprint for rooftop or basement installs",
+    ],
+    icon: "Zap",
+  },
+  {
+    slug: "snj-dg-82",
+    name: "SNJ DG-82",
+    category: "diesel-generator-sets",
+    tagline: "82.5 kVA genset for mid-size commercial and residential complexes.",
+    description:
+      "Balances fuel efficiency and load-acceptance for buildings running lifts, common-area lighting, and water pumps on backup power.",
+    kvaRange: [66, 82],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Standby", "Prime"],
+    industries: ["real-estate-commercial", "hospitality", "government-psu"],
+    specs: [
+      { label: "Prime Power", value: "75 kVA / 60 kW" },
+      { label: "Standby Power", value: "82.5 kVA / 66 kW" },
+      { label: "Alternator", value: "Brushless, IP23" },
+      { label: "Fuel Tank", value: "180 L base-frame mounted" },
+      { label: "Sound Enclosure", value: "78 dB(A) @ 1m" },
+      { label: "Control Panel", value: "Microprocessor-based, AMF/ATS-ready" },
+    ],
+    features: [
+      "Single-step load acceptance to 82.5 kVA",
+      "Remote monitoring port (RS-485)",
+      "Anti-vibration mounts for rooftop installation",
+      "Lockable enclosure with lifting eyes",
+    ],
+    icon: "Zap",
+  },
+  {
+    slug: "snj-dg-125",
+    name: "SNJ DG-125",
+    category: "diesel-generator-sets",
+    tagline: "125 kVA workhorse for hospitals, hotels, and factories.",
+    description:
+      "Our most-deployed genset — sized for the ICU-plus-imaging load of a mid-size hospital wing or the production floor of a light manufacturing unit.",
+    kvaRange: [100, 125],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Standby", "Prime"],
+    industries: ["healthcare", "manufacturing", "hospitality"],
+    specs: [
+      { label: "Prime Power", value: "114 kVA / 91 kW" },
+      { label: "Standby Power", value: "125 kVA / 100 kW" },
+      { label: "Alternator", value: "Brushless, Class H insulation" },
+      { label: "Fuel Tank", value: "250 L base-frame mounted" },
+      { label: "Sound Enclosure", value: "78 dB(A) @ 1m" },
+      { label: "Control Panel", value: "PLC-based, remote SMS alerts" },
+    ],
+    features: [
+      "Dual-wall fuel tank with leak containment",
+      "Battery charger and low-oil shutdown",
+      "Suitable for parallel operation (2 units)",
+      "AMC and load bank testing history on 400+ deployed units",
+    ],
+    icon: "Zap",
+  },
+  {
+    slug: "snj-dg-250",
+    name: "SNJ DG-250",
+    category: "diesel-generator-sets",
+    tagline: "250 kVA genset for data halls and multi-specialty hospitals.",
+    description:
+      "Engineered for facilities that cannot tolerate a power gap — precision cooling, server racks, and critical care equipment all ride through on this set.",
+    kvaRange: [200, 250],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Standby", "Prime", "Continuous"],
+    industries: ["data-centers", "healthcare", "manufacturing"],
+    specs: [
+      { label: "Prime Power", value: "227 kVA / 182 kW" },
+      { label: "Standby Power", value: "250 kVA / 200 kW" },
+      { label: "Alternator", value: "Brushless, PMG excitation" },
+      { label: "Fuel Tank", value: "500 L base-frame mounted" },
+      { label: "Sound Enclosure", value: "80 dB(A) @ 1m, super-silent option available" },
+      { label: "Control Panel", value: "PLC-based with cloud telemetry" },
+    ],
+    features: [
+      "Synchronizing-panel ready for N+1 configurations",
+      "Cloud-connected run-hour and fuel-level telemetry",
+      "Seismic-rated base frame on request",
+      "Automatic load bank test scheduling via AMC",
+    ],
+    icon: "Zap",
+  },
+  {
+    slug: "snj-dg-500",
+    name: "SNJ DG-500",
+    category: "diesel-generator-sets",
+    tagline: "500 kVA genset for industrial plants and large commercial towers.",
+    description:
+      "A high-capacity set for facilities running heavy motor loads, chillers, and production lines that need full-building backup, not partial.",
+    kvaRange: [400, 500],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Prime", "Continuous"],
+    industries: ["manufacturing", "data-centers", "construction-infrastructure"],
+    specs: [
+      { label: "Prime Power", value: "455 kVA / 364 kW" },
+      { label: "Standby Power", value: "500 kVA / 400 kW" },
+      { label: "Alternator", value: "Brushless, IP23, Class H" },
+      { label: "Fuel Tank", value: "1,000 L, optional bulk tank interface" },
+      { label: "Sound Enclosure", value: "82 dB(A) @ 1m" },
+      { label: "Control Panel", value: "PLC-based, Modbus TCP/IP" },
+    ],
+    features: [
+      "Modbus TCP/IP for BMS integration",
+      "Dual-fuel-filter changeover without shutdown",
+      "Site commissioning includes load bank acceptance test",
+      "Extended warranty available with SNJ AMC",
+    ],
+    icon: "Zap",
+  },
+  {
+    slug: "snj-dg-1010",
+    name: "SNJ DG-1010",
+    category: "diesel-generator-sets",
+    tagline: "1,010 kVA genset for large industrial and infrastructure sites.",
+    description:
+      "Built for continuous heavy-industrial duty and large infrastructure projects that require multi-unit paralleling for full-site redundancy.",
+    kvaRange: [800, 1010],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Prime", "Continuous"],
+    industries: ["manufacturing", "construction-infrastructure", "government-psu"],
+    specs: [
+      { label: "Prime Power", value: "918 kVA / 734 kW" },
+      { label: "Standby Power", value: "1,010 kVA / 808 kW" },
+      { label: "Alternator", value: "Brushless, PMG, Class H" },
+      { label: "Fuel Tank", value: "2,000 L skid-mounted" },
+      { label: "Sound Enclosure", value: "Open-skid or acoustic canopy" },
+      { label: "Control Panel", value: "PLC-based with synchronizing module" },
+    ],
+    features: [
+      "Rated for N+1 and N+2 parallel bus configurations",
+      "Crane-lift skid base for site placement",
+      "Extended service intervals with high-capacity oil sump",
+      "On-site commissioning team included",
+    ],
+    icon: "Zap",
+  },
+
+  // ---------------- Gas Generator Sets ----------------
+  {
+    slug: "snj-ng-63",
+    name: "SNJ NG-63",
+    category: "gas-generator-sets",
+    tagline: "63 kVA natural gas genset for continuous commercial power.",
+    description:
+      "Runs on piped natural gas for sites that want a lower-emission, lower-noise alternative to diesel for base-load or standby duty.",
+    kvaRange: [50, 63],
+    fuelType: "Gas",
+    phase: "Three Phase",
+    applications: ["Prime", "Continuous"],
+    industries: ["real-estate-commercial", "hospitality"],
+    specs: [
+      { label: "Prime Power", value: "57 kVA / 46 kW" },
+      { label: "Fuel", value: "Piped Natural Gas (PNG)" },
+      { label: "Alternator", value: "Brushless, self-regulating" },
+      { label: "Emissions", value: "CPCB II compliant" },
+      { label: "Control Panel", value: "Digital, AMF-ready" },
+    ],
+    features: [
+      "No on-site fuel storage required",
+      "Lower noise signature than equivalent diesel set",
+      "Suitable for continuous base-load operation",
+      "Reduced maintenance interval on spark-ignited engine",
+    ],
+    icon: "Flame",
+  },
+  {
+    slug: "snj-ng-250",
+    name: "SNJ NG-250",
+    category: "gas-generator-sets",
+    tagline: "250 kVA gas genset for industrial base-load and biogas sites.",
+    description:
+      "Configurable for natural gas or biogas fuel streams, this set is common on manufacturing sites and agri-processing units generating their own biogas.",
+    kvaRange: [200, 250],
+    fuelType: "Gas",
+    phase: "Three Phase",
+    applications: ["Prime", "Continuous"],
+    industries: ["manufacturing", "agriculture"],
+    specs: [
+      { label: "Prime Power", value: "227 kVA / 182 kW" },
+      { label: "Fuel", value: "Natural Gas or Biogas (dual-config)" },
+      { label: "Alternator", value: "Brushless, PMG excitation" },
+      { label: "Emissions", value: "CPCB II compliant" },
+      { label: "Control Panel", value: "PLC-based with gas-quality sensing" },
+    ],
+    features: [
+      "Biogas methane-content auto-compensation",
+      "Waste-heat recovery interface available",
+      "Suitable for grid-parallel operation",
+      "Extended TBO (time between overhaul) vs. diesel equivalent",
+    ],
+    icon: "Flame",
+  },
+  {
+    slug: "snj-ng-500",
+    name: "SNJ NG-500",
+    category: "gas-generator-sets",
+    tagline: "500 kVA gas genset for continuous industrial power.",
+    description:
+      "A high-capacity gas set for plants that run gensets as a primary power source rather than backup, sized for round-the-clock duty cycles.",
+    kvaRange: [400, 500],
+    fuelType: "Gas",
+    phase: "Three Phase",
+    applications: ["Continuous"],
+    industries: ["manufacturing", "data-centers"],
+    specs: [
+      { label: "Prime Power", value: "455 kVA / 364 kW" },
+      { label: "Fuel", value: "Piped Natural Gas (PNG)" },
+      { label: "Alternator", value: "Brushless, IP23" },
+      { label: "Emissions", value: "CPCB II compliant" },
+      { label: "Control Panel", value: "PLC-based, Modbus TCP/IP" },
+    ],
+    features: [
+      "Designed for 8,000+ run hours per year",
+      "Remote gas-train diagnostics",
+      "BMS integration via Modbus",
+      "Combined heat and power (CHP) ready",
+    ],
+    icon: "Flame",
+  },
+
+  // ---------------- Industrial Diesel Engines ----------------
+  {
+    slug: "snj-ie-100",
+    name: "SNJ IE-100",
+    category: "industrial-diesel-engines",
+    tagline: "Bare-shaft 100 kW diesel engine for pump and compressor drives.",
+    description:
+      "A bare-shaft engine block for OEMs and system integrators building irrigation pump sets, air compressors, or fire-fighting pump packages.",
+    kvaRange: [80, 100],
+    fuelType: "Diesel",
+    phase: "N/A",
+    applications: ["Pump Drive", "Compressor Drive", "OEM Integration"],
+    industries: ["agriculture", "manufacturing", "construction-infrastructure"],
+    specs: [
+      { label: "Rated Output", value: "100 kW @ 1500 rpm" },
+      { label: "Configuration", value: "In-line 4-cylinder, turbocharged" },
+      { label: "Cooling", value: "Radiator or heat-exchanger option" },
+      { label: "Emissions", value: "CPCB IV+ compliant" },
+    ],
+    features: [
+      "PTO-ready flywheel housing",
+      "Mechanical or electronic governor options",
+      "Suitable for fire pump certification packages",
+      "Field service support for OEM integrators",
+    ],
+    icon: "Cog",
+  },
+  {
+    slug: "snj-ie-250",
+    name: "SNJ IE-250",
+    category: "industrial-diesel-engines",
+    tagline: "250 kW industrial engine for heavy pump and marine auxiliary use.",
+    description:
+      "A heavier-duty engine block built for continuous industrial pump drives, marine auxiliary power, and large compressor packages.",
+    kvaRange: [200, 250],
+    fuelType: "Diesel",
+    phase: "N/A",
+    applications: ["Pump Drive", "Marine Auxiliary", "OEM Integration"],
+    industries: ["manufacturing", "construction-infrastructure"],
+    specs: [
+      { label: "Rated Output", value: "250 kW @ 1500 rpm" },
+      { label: "Configuration", value: "In-line 6-cylinder, turbocharged aftercooled" },
+      { label: "Cooling", value: "Heat-exchanger or keel-cooled (marine)" },
+      { label: "Emissions", value: "CPCB IV+ compliant" },
+    ],
+    features: [
+      "Marine gearbox interface available",
+      "Corrosion-resistant coating option for marine duty",
+      "Extended oil-change interval on high-capacity sump",
+      "Supplied with full OEM integration drawings",
+    ],
+    icon: "Cog",
+  },
+  {
+    slug: "snj-ie-500",
+    name: "SNJ IE-500",
+    category: "industrial-diesel-engines",
+    tagline: "500 kW industrial engine for large-scale OEM applications.",
+    description:
+      "Our largest bare-shaft platform, used in large irrigation schemes, industrial compressor trains, and custom genset builds by OEM partners.",
+    kvaRange: [400, 500],
+    fuelType: "Diesel",
+    phase: "N/A",
+    applications: ["Pump Drive", "OEM Integration"],
+    industries: ["manufacturing", "government-psu"],
+    specs: [
+      { label: "Rated Output", value: "500 kW @ 1500 rpm" },
+      { label: "Configuration", value: "V12, turbocharged aftercooled" },
+      { label: "Cooling", value: "Radiator or remote heat-exchanger" },
+      { label: "Emissions", value: "CPCB IV+ compliant" },
+    ],
+    features: [
+      "Custom flywheel housing to SAE spec on request",
+      "Dual-alternator charging option",
+      "Full engineering support for OEM system design",
+      "Available with SNJ 5-year extended block warranty",
+    ],
+    icon: "Cog",
+  },
+
+  // ---------------- Controls & Accessories ----------------
+  {
+    slug: "snj-amf-panel",
+    name: "SNJ AMF Control Panel",
+    category: "controls-accessories",
+    tagline: "Automatic Mains Failure panel with remote monitoring.",
+    description:
+      "Detects mains failure, starts the genset, and transfers load automatically — with SMS/app alerts on every state change.",
+    fuelType: "N/A",
+    phase: "Three Phase",
+    applications: ["Automation"],
+    industries: ["real-estate-commercial", "healthcare", "manufacturing"],
+    specs: [
+      { label: "Compatibility", value: "Universal, all genset brands" },
+      { label: "Display", value: "4.3\" color HMI" },
+      { label: "Connectivity", value: "GSM/GPRS + RS-485 Modbus" },
+      { label: "Protections", value: "Over/under voltage, frequency, short circuit" },
+    ],
+    features: [
+      "SMS and app alerts on start/stop/fault",
+      "Retrofit-compatible with existing gensets",
+      "Data logging for AMC compliance reporting",
+      "IP54-rated enclosure",
+    ],
+    icon: "SlidersHorizontal",
+  },
+  {
+    slug: "snj-ats-panel",
+    name: "SNJ ATS Breaker Panel",
+    category: "controls-accessories",
+    tagline: "Automatic transfer switch for seamless source changeover.",
+    description:
+      "Switches load between mains and genset (or between two gensets) with break-before-make safety interlocking.",
+    fuelType: "N/A",
+    phase: "Three Phase",
+    applications: ["Automation"],
+    industries: ["healthcare", "data-centers", "real-estate-commercial"],
+    specs: [
+      { label: "Rating Options", value: "63A to 3200A" },
+      { label: "Transfer Time", value: "< 10 seconds (programmable)" },
+      { label: "Interlock", value: "Mechanical + electrical" },
+      { label: "Enclosure", value: "IP54, wall or floor mount" },
+    ],
+    features: [
+      "Motorized or contactor-based transfer options",
+      "Compatible with genset synchronizing panels",
+      "Panel-mounted metering and event log",
+      "Field-serviceable by SNJ technicians",
+    ],
+    icon: "SlidersHorizontal",
+  },
+  {
+    slug: "snj-sync-panel",
+    name: "SNJ Synchronizing Panel",
+    category: "controls-accessories",
+    tagline: "Load-sharing and synchronizing control for multi-genset sites.",
+    description:
+      "Coordinates two or more generator sets on a common bus for N+1 redundancy, peak shaving, or capacity expansion.",
+    fuelType: "N/A",
+    phase: "Three Phase",
+    applications: ["Automation"],
+    industries: ["data-centers", "manufacturing"],
+    specs: [
+      { label: "Max Sets Supported", value: "Up to 8 in parallel" },
+      { label: "Load Sharing", value: "Active & reactive, droop or isochronous" },
+      { label: "Protocol", value: "Modbus TCP/IP, CAN J1939" },
+      { label: "Enclosure", value: "IP54, panel or rack-mount" },
+    ],
+    features: [
+      "Automatic load-dependent start/stop sequencing",
+      "Priority sequencing for redundant configurations",
+      "Remote SCADA/BMS integration",
+      "Commissioned on-site by SNJ engineers",
+    ],
+    icon: "SlidersHorizontal",
+  },
+  {
+    slug: "snj-acoustic-canopy",
+    name: "SNJ Acoustic Canopy",
+    category: "controls-accessories",
+    tagline: "Weatherproof, sound-attenuated enclosure retrofit.",
+    description:
+      "Reduces noise output and weatherproofs an existing open-skid genset — common for rooftop or courtyard installations near occupied spaces.",
+    fuelType: "N/A",
+    phase: "N/A",
+    applications: ["Noise Attenuation"],
+    industries: ["real-estate-commercial", "hospitality", "healthcare"],
+    specs: [
+      { label: "Noise Reduction", value: "Down to 68 dB(A) @ 1m" },
+      { label: "Material", value: "Galvanized steel, powder-coated" },
+      { label: "Weatherproofing", value: "IP23 rated ventilation louvres" },
+      { label: "Sizes", value: "Custom-fit to 40 kVA – 1,010 kVA sets" },
+    ],
+    features: [
+      "Lockable access doors for maintenance",
+      "Integrated exhaust silencer mounting",
+      "Corrosion-resistant coating for coastal sites",
+      "Retrofit survey included in quote",
+    ],
+    icon: "SlidersHorizontal",
+  },
+  {
+    slug: "snj-avr-module",
+    name: "SNJ AVR Replacement Module",
+    category: "controls-accessories",
+    tagline: "Automatic voltage regulator for alternator output stability.",
+    description:
+      "A drop-in AVR replacement for aging alternators, restoring stable voltage regulation under fluctuating load conditions.",
+    fuelType: "N/A",
+    phase: "N/A",
+    applications: ["Automation"],
+    industries: ["manufacturing", "real-estate-commercial"],
+    specs: [
+      { label: "Compatibility", value: "Major alternator brands, cross-reference available" },
+      { label: "Regulation Accuracy", value: "± 1% steady state" },
+      { label: "Protection", value: "Over-excitation, under-speed" },
+    ],
+    features: [
+      "Same-day dispatch from SNJ parts stock",
+      "Installed and tested by SNJ technicians on request",
+      "6-month replacement warranty",
+    ],
+    icon: "SlidersHorizontal",
+  },
+
+  // ---------------- Genuine Spare Parts ----------------
+  {
+    slug: "snj-service-kit-standard",
+    name: "Standard Service Kit",
+    category: "spare-parts",
+    tagline: "Oil, fuel, and air filter kit for scheduled maintenance.",
+    description:
+      "The complete consumable set for a routine AMC service visit — matched to your genset's engine family.",
+    fuelType: "N/A",
+    phase: "N/A",
+    applications: ["Maintenance"],
+    industries: [],
+    specs: [
+      { label: "Contents", value: "Oil filter, fuel filter, air filter, gaskets" },
+      { label: "Compatibility", value: "Matched by engine model on order" },
+    ],
+    features: [
+      "OEM-approved components only",
+      "Bundled pricing under AMC contracts",
+      "Same-week dispatch to any SNJ service branch",
+    ],
+    icon: "PackageSearch",
+  },
+  {
+    slug: "snj-fuel-injector-set",
+    name: "Fuel Injector Set",
+    category: "spare-parts",
+    tagline: "Precision-remanufactured injectors for restored fuel efficiency.",
+    description:
+      "Worn injectors are the most common cause of high fuel consumption and hard starting. This set is tested to OEM spray-pattern tolerance.",
+    fuelType: "N/A",
+    phase: "N/A",
+    applications: ["Repair"],
+    industries: [],
+    specs: [
+      { label: "Testing", value: "Spray-pattern and pressure tested" },
+      { label: "Compatibility", value: "Matched by engine model on order" },
+    ],
+    features: [
+      "Core-exchange pricing available",
+      "Fitted and calibrated by SNJ technicians",
+      "12-month warranty on remanufactured units",
+    ],
+    icon: "PackageSearch",
+  },
+  {
+    slug: "snj-alternator-assembly",
+    name: "Alternator Assembly",
+    category: "spare-parts",
+    tagline: "Replacement alternator head for gensets 40 kVA – 500 kVA.",
+    description:
+      "A full alternator replacement for units where rewinding is uneconomical — balanced, tested, and shipped ready to bolt on.",
+    fuelType: "N/A",
+    phase: "N/A",
+    applications: ["Repair"],
+    industries: [],
+    specs: [
+      { label: "Rating Range", value: "40 kVA – 500 kVA" },
+      { label: "Insulation Class", value: "H" },
+      { label: "Testing", value: "Full load bank tested before dispatch" },
+    ],
+    features: [
+      "Matched to your genset's coupling and frame size",
+      "Installation and commissioning available",
+      "18-month warranty",
+    ],
+    icon: "PackageSearch",
+  },
+  {
+    slug: "snj-radiator-assembly",
+    name: "Radiator Assembly",
+    category: "spare-parts",
+    tagline: "Replacement cooling module for engines 40 kW – 400 kW.",
+    description:
+      "Restores cooling capacity on units that have started running hot due to core damage or corrosion — a common cause of derating.",
+    fuelType: "N/A",
+    phase: "N/A",
+    applications: ["Repair"],
+    industries: [],
+    specs: [
+      { label: "Compatibility", value: "Matched by engine model on order" },
+      { label: "Pressure Tested", value: "Yes, to 2x operating pressure" },
+    ],
+    features: [
+      "Pressure-tested before dispatch",
+      "Fan shroud and mounting hardware included",
+      "12-month warranty",
+    ],
+    icon: "PackageSearch",
+  },
+  {
+    slug: "snj-control-module",
+    name: "Genset Control Module",
+    category: "spare-parts",
+    tagline: "Replacement controller for legacy AMF/ATS panels.",
+    description:
+      "A direct-fit controller replacement for panels that have become unreliable or unsupported, restoring full AMF functionality.",
+    fuelType: "N/A",
+    phase: "N/A",
+    applications: ["Repair", "Automation"],
+    industries: [],
+    specs: [
+      { label: "Compatibility", value: "Cross-reference available for major panel brands" },
+      { label: "Connectivity", value: "RS-485 Modbus, optional GSM module" },
+    ],
+    features: [
+      "Configuration and commissioning included",
+      "Data migration from old controller where possible",
+      "12-month warranty",
+    ],
+    icon: "PackageSearch",
+  },
+
+  // ---------------- Used & Refurbished ----------------
+  {
+    slug: "snj-used-dg-125",
+    name: "SNJ Certified DG-125 (Refurbished)",
+    category: "used-refurbished",
+    tagline: "125 kVA unit, inspected, load-tested, 6-month warranty.",
+    description:
+      "A trade-in DG-125 fully stripped, inspected, and rebuilt to SNJ's certified-used standard — a lower-cost entry point with a real warranty.",
+    kvaRange: [100, 125],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Standby", "Prime"],
+    industries: ["manufacturing", "real-estate-commercial"],
+    specs: [
+      { label: "Run Hours at Sale", value: "Under 8,000 (verified logbook)" },
+      { label: "Inspection", value: "42-point SNJ certified-used checklist" },
+      { label: "Warranty", value: "6 months, parts and labor" },
+    ],
+    features: [
+      "Full load bank test report included",
+      "Fresh service kit and battery at handover",
+      "Financing available",
+    ],
+    icon: "RotateCcw",
+  },
+  {
+    slug: "snj-used-dg-250",
+    name: "SNJ Certified DG-250 (Refurbished)",
+    category: "used-refurbished",
+    tagline: "250 kVA unit, inspected, load-tested, 6-month warranty.",
+    description:
+      "Ideal for buyers who need 250 kVA capacity on a tighter budget or a faster delivery timeline than a new-build order.",
+    kvaRange: [200, 250],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Standby", "Prime"],
+    industries: ["healthcare", "manufacturing"],
+    specs: [
+      { label: "Run Hours at Sale", value: "Under 10,000 (verified logbook)" },
+      { label: "Inspection", value: "42-point SNJ certified-used checklist" },
+      { label: "Warranty", value: "6 months, parts and labor" },
+    ],
+    features: [
+      "Full load bank test report included",
+      "Available for immediate dispatch",
+      "Optional AMC bundled at purchase",
+    ],
+    icon: "RotateCcw",
+  },
+  {
+    slug: "snj-used-dg-500",
+    name: "SNJ Certified DG-500 (Refurbished)",
+    category: "used-refurbished",
+    tagline: "500 kVA unit, inspected, load-tested, 6-month warranty.",
+    description:
+      "A high-capacity refurbished set for industrial buyers who need to move fast on a capacity expansion without a full new-unit lead time.",
+    kvaRange: [400, 500],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Prime", "Continuous"],
+    industries: ["manufacturing", "construction-infrastructure"],
+    specs: [
+      { label: "Run Hours at Sale", value: "Under 12,000 (verified logbook)" },
+      { label: "Inspection", value: "42-point SNJ certified-used checklist" },
+      { label: "Warranty", value: "6 months, parts and labor" },
+    ],
+    features: [
+      "Full load bank test report included",
+      "Site survey included before dispatch",
+      "Financing available",
+    ],
+    icon: "RotateCcw",
+  },
+
+  // ---------------- Rental Generators ----------------
+  {
+    slug: "snj-rental-dg-125",
+    name: "Rental DG-125",
+    category: "rental-generators",
+    tagline: "125 kVA rental unit, daily, weekly, or monthly terms.",
+    description:
+      "Deployed for planned shutdowns, events, and short-term capacity gaps — delivered, commissioned, and collected by SNJ.",
+    kvaRange: [100, 125],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Temporary Power", "Event Power"],
+    industries: ["hospitality", "construction-infrastructure"],
+    specs: [
+      { label: "Minimum Term", value: "1 day" },
+      { label: "Fuel", value: "Customer-supplied or SNJ-managed" },
+      { label: "Delivery", value: "Included within service coverage area" },
+    ],
+    features: [
+      "Delivered pre-tested and ready to run",
+      "Optional operator support for events",
+      "Fuel management add-on available",
+    ],
+    icon: "CalendarRange",
+  },
+  {
+    slug: "snj-rental-dg-320",
+    name: "Rental DG-320",
+    category: "rental-generators",
+    tagline: "320 kVA rental unit for construction and industrial shutdowns.",
+    description:
+      "Sized for construction sites and factories that need bridge power during grid upgrades, planned maintenance, or capacity shortfalls.",
+    kvaRange: [250, 320],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Temporary Power", "Bridge Power"],
+    industries: ["construction-infrastructure", "manufacturing"],
+    specs: [
+      { label: "Minimum Term", value: "3 days" },
+      { label: "Fuel", value: "Customer-supplied or SNJ-managed" },
+      { label: "Delivery", value: "Site survey included" },
+    ],
+    features: [
+      "Trailer-mounted for fast site relocation",
+      "24x7 breakdown cover included for rental period",
+      "Long-term rental discounts available",
+    ],
+    icon: "CalendarRange",
+  },
+  {
+    slug: "snj-rental-dg-750",
+    name: "Rental DG-750",
+    category: "rental-generators",
+    tagline: "750 kVA rental unit for large events and industrial bridging.",
+    description:
+      "Our largest rental platform — used for major events, data center commissioning periods, and large industrial bridge-power contracts.",
+    kvaRange: [625, 750],
+    fuelType: "Diesel",
+    phase: "Three Phase",
+    applications: ["Temporary Power", "Bridge Power", "Event Power"],
+    industries: ["data-centers", "construction-infrastructure"],
+    specs: [
+      { label: "Minimum Term", value: "7 days" },
+      { label: "Fuel", value: "SNJ-managed fuel logistics available" },
+      { label: "Delivery", value: "Full site survey and single-line diagram provided" },
+    ],
+    features: [
+      "Parallel-capable for multi-unit rental deployments",
+      "On-site technician included for load duration",
+      "Priority breakdown response during rental term",
+    ],
+    icon: "CalendarRange",
+  },
+];
+
+export function getProduct(slug: string) {
+  return products.find((p) => p.slug === slug);
+}
+
+export function getProductsByCategory(category: string) {
+  return products.filter((p) => p.category === category);
+}
+
+export function getProductsByIndustry(industrySlug: string) {
+  return products.filter((p) => p.industries.includes(industrySlug));
+}
+
+export function getRelatedProducts(product: Product, limit = 3) {
+  return products
+    .filter((p) => p.slug !== product.slug && p.category === product.category)
+    .slice(0, limit);
+}

@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: snj
+      POSTGRES_PASSWORD: snj_local_password
+      POSTGRES_DB: snj_diesel
+    ports:
+      - "5432:5432"
+    volumes:
+      - snj_pgdata:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://snj:snj_local_password@db:5432/snj_diesel?schema=public
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+
+volumes:
+  snj_pgdata:
