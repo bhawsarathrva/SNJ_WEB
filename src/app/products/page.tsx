@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
@@ -34,11 +35,20 @@ export default function ProductsPage() {
               <Link
                 key={category.slug}
                 href={`/products/category/${category.slug}`}
-                className="group flex items-start gap-5 rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40"
+                className="group flex items-start gap-5 overflow-hidden rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40 sm:p-5"
               >
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                  <Icon className="size-6" />
-                </span>
+                <div className="relative size-20 shrink-0 overflow-hidden rounded-lg">
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    fill
+                    sizes="80px"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <span className="absolute inset-0 flex items-center justify-center bg-black/30">
+                    <Icon className="size-6 text-white" />
+                  </span>
+                </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between gap-3">
                     <h2 className="text-lg font-semibold">{category.name}</h2>

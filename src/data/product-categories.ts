@@ -7,6 +7,7 @@ export const productCategories: ProductCategory[] = [
     shortName: "Diesel Gensets",
     summary: "6 kVA to 2,500 kVA standby, prime, and continuous power sets.",
     icon: "Zap",
+    image: "/images/products/diesel-generator-sets.jpg",
   },
   {
     slug: "gas-generator-sets",
@@ -14,6 +15,7 @@ export const productCategories: ProductCategory[] = [
     shortName: "Gas Gensets",
     summary: "Natural gas and biogas generator sets for continuous duty.",
     icon: "Flame",
+    image: "/images/products/gas-generator-sets.jpg",
   },
   {
     slug: "industrial-diesel-engines",
@@ -21,6 +23,7 @@ export const productCategories: ProductCategory[] = [
     shortName: "Diesel Engines",
     summary: "Bare-shaft engines for pumping, compressor, and OEM integration.",
     icon: "Cog",
+    image: "/images/products/industrial-diesel-engines.jpg",
   },
   {
     slug: "controls-accessories",
@@ -28,6 +31,7 @@ export const productCategories: ProductCategory[] = [
     shortName: "Controls",
     summary: "AMF/ATS panels, synchronizing panels, canopies, and AVRs.",
     icon: "SlidersHorizontal",
+    image: "/images/products/controls-accessories.jpg",
   },
   {
     slug: "spare-parts",
@@ -35,6 +39,7 @@ export const productCategories: ProductCategory[] = [
     shortName: "Spare Parts",
     summary: "OEM-approved filters, injectors, alternators, and control modules.",
     icon: "PackageSearch",
+    image: "/images/products/spare-parts.jpg",
   },
   {
     slug: "used-refurbished",
@@ -42,6 +47,7 @@ export const productCategories: ProductCategory[] = [
     shortName: "Used Units",
     summary: "Inspected, load-tested, and warrantied second-life generators.",
     icon: "RotateCcw",
+    image: "/images/products/used-refurbished.jpg",
   },
   {
     slug: "rental-generators",
@@ -49,6 +55,7 @@ export const productCategories: ProductCategory[] = [
     shortName: "Rentals",
     summary: "Short and long-term power rental for planned and emergency needs.",
     icon: "CalendarRange",
+    image: "/images/products/rental-generators.jpg",
   },
 ];
 

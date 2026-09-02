@@ -74,7 +74,7 @@ export function Header() {
         </Container>
       </div>
 
-      <Container className="flex h-16 items-center justify-between gap-4">
+      <Container className="flex h-20 items-center justify-between gap-4">
         <Logo />
 
         {/* Desktop nav */}
@@ -89,7 +89,7 @@ export function Header() {
               <button
                 type="button"
                 className={cn(
-                  "flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/85 transition-colors hover:bg-muted hover:text-foreground",
+                  "flex items-center gap-1 rounded-md px-3 py-2 text-base font-bold text-foreground/85 transition-colors hover:bg-muted hover:text-foreground",
                   openGroup === group.label && "bg-muted text-foreground"
                 )}
                 aria-expanded={openGroup === group.label}
@@ -120,7 +120,7 @@ export function Header() {
                             href={item.href}
                             className="flex flex-col gap-0.5 rounded-md px-3 py-2 text-sm hover:bg-muted"
                           >
-                            <span className="font-medium text-foreground">{item.label}</span>
+                            <span className="font-bold text-foreground">{item.label}</span>
                             {item.description && (
                               <span className="text-xs text-muted-foreground">
                                 {item.description}

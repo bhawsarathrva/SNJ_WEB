@@ -13,6 +13,7 @@ export interface ProductCategory {
   shortName: string;
   summary: string;
   icon: string;
+  image: string;
 }
 
 export interface ProductSpec {

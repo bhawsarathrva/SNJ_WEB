@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Calculator } from "lucide-react";
@@ -59,6 +60,18 @@ export default async function ProductCategoryPage({ params }: PageProps) {
           </Button>
         </div>
       </PageHeader>
+
+      <div className="relative h-56 w-full overflow-hidden sm:h-72 lg:h-80">
+        <Image
+          src={category.image}
+          alt={category.name}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+      </div>
 
       <section className="py-16 sm:py-20">
         <Container>

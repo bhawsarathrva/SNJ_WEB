@@ -10,8 +10,8 @@ export function Logo({ className, dark = false }: { className?: string; dark?: b
     >
       <span
         className={cn(
-          "flex h-9 w-9 items-center justify-center rounded-md font-display text-base font-semibold tracking-tight",
-          dark ? "bg-primary text-primary-foreground" : "bg-primary text-primary-foreground"
+          "flex items-center justify-center rounded-md font-display font-bold tracking-tight",
+          dark ? "h-14 w-14 text-2xl bg-primary text-primary-foreground" : "h-11 w-11 text-lg bg-primary text-primary-foreground"
         )}
       >
         SNJ
@@ -19,20 +19,17 @@ export function Logo({ className, dark = false }: { className?: string; dark?: b
       <span className="flex flex-col leading-none">
         <span
           className={cn(
-            "font-display text-lg font-semibold uppercase tracking-wide",
-            dark ? "text-white" : "text-foreground"
+            "font-display font-extrabold uppercase tracking-wide",
+            dark ? "text-3xl text-white" : "text-2xl text-foreground"
           )}
         >
           SNJ Diesel
         </span>
-        <span
-          className={cn(
-            "font-data text-[10px] uppercase tracking-[0.18em]",
-            dark ? "text-white/60" : "text-muted-foreground"
-          )}
-        >
-          Power that doesn&apos;t wait
-        </span>
+        {dark && (
+          <span className="mt-1 text-xs font-semibold uppercase tracking-[0.1em] text-white/70 font-data">
+            One Roof Solution Of All Your Power Requirements
+          </span>
+        )}
       </span>
     </Link>
   );

@@ -14,7 +14,7 @@ export function ProjectsShowcase() {
       <Container>
         <SectionHeading
           eyebrow="Proof, Not Promises"
-          title="Recent installations across Maharashtra"
+          title="Recent Works"
           description="A sample of sites we've sized, installed, and now maintain."
           cta={{ label: "View all case studies", href: "/projects" }}
         />
