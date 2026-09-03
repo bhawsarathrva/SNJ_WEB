@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { productCategories } from "@/data/product-categories";
-import { resolveIcon } from "@/lib/icon-map";
+import { DynamicIcon } from "@/lib/icon-map";
 
 export function ProductsOverview() {
   return (
@@ -18,7 +18,6 @@ export function ProductsOverview() {
         />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {productCategories.map((category) => {
-            const Icon = resolveIcon(category.icon);
             return (
               <Link
                 key={category.slug}
@@ -35,7 +34,7 @@ export function ProductsOverview() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
                   <span className="absolute left-3 top-3 flex size-9 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
-                    <Icon className="size-4.5" />
+                    <DynamicIcon name={category.icon} className="size-4.5" />
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col justify-between p-6">

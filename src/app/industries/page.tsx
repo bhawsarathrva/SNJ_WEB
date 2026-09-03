@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { PageHeader } from "@/components/layout/page-header";
 import { industries } from "@/data/industries";
-import { resolveIcon } from "@/lib/icon-map";
+import { DynamicIcon } from "@/lib/icon-map";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -26,14 +26,13 @@ export default function IndustriesPage() {
       <section className="py-16 sm:py-20">
         <Container className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry) => {
-            const Icon = resolveIcon(industry.icon);
             return (
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
                 className="group flex flex-col gap-3 rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40"
               >
-                <Icon className="size-6 text-primary" />
+                <DynamicIcon name={industry.icon} className="size-6 text-primary" />
                 <h2 className="text-base font-semibold">{industry.name}</h2>
                 <p className="flex-1 text-sm text-muted-foreground">{industry.summary}</p>
                 <p className="font-data text-xs text-muted-foreground">

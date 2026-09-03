@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { industries } from "@/data/industries";
-import { resolveIcon } from "@/lib/icon-map";
+import { DynamicIcon } from "@/lib/icon-map";
 
 export function IndustriesStrip() {
   return (
@@ -16,14 +16,13 @@ export function IndustriesStrip() {
         />
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {industries.map((industry) => {
-            const Icon = resolveIcon(industry.icon);
             return (
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
                 className="group flex flex-col items-start gap-3 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40"
               >
-                <Icon className="size-5 text-primary" />
+                <DynamicIcon name={industry.icon} className="size-5 text-primary" />
                 <span className="text-sm font-medium leading-snug">{industry.name}</span>
               </Link>
             );

@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { PageHeader } from "@/components/layout/page-header";
 import { services } from "@/data/services";
-import { resolveIcon } from "@/lib/icon-map";
+import { DynamicIcon } from "@/lib/icon-map";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -27,7 +27,6 @@ export default function ServicesPage() {
       <section className="py-16 sm:py-20">
         <Container className="grid gap-4 sm:grid-cols-2">
           {services.map((service) => {
-            const Icon = resolveIcon(service.icon);
             return (
               <Link
                 key={service.slug}
@@ -35,7 +34,7 @@ export default function ServicesPage() {
                 className="group flex items-start gap-5 rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40"
               >
                 <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-teal-soft text-teal">
-                  <Icon className="size-6" />
+                  <DynamicIcon name={service.icon} className="size-6" />
                 </span>
                 <div>
                   <h2 className="text-lg font-semibold">{service.name}</h2>

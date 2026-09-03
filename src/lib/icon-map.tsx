@@ -52,3 +52,15 @@ export const iconMap: Record<string, LucideIcon> = {
 export function resolveIcon(name: string): LucideIcon {
   return iconMap[name] ?? Cog;
 }
+
+export function DynamicIcon({
+  name,
+  className,
+}: {
+  name: string;
+  className?: string;
+}) {
+  const Icon = iconMap[name] ?? Cog;
+  return <Icon className={className} />;
+}
+

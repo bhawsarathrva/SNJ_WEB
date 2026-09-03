@@ -10,7 +10,7 @@ import { industries, getIndustry } from "@/data/industries";
 import { getProductsByIndustry } from "@/data/products";
 import { getService } from "@/data/services";
 import { getProjectsByIndustry } from "@/data/projects";
-import { resolveIcon } from "@/lib/icon-map";
+import { DynamicIcon } from "@/lib/icon-map";
 import { buildMetadata } from "@/lib/seo";
 
 interface PageProps {
@@ -43,7 +43,6 @@ export default async function IndustryDetailPage({ params }: PageProps) {
     .map((s) => getService(s))
     .filter((s): s is NonNullable<typeof s> => Boolean(s));
   const relatedProjects = getProjectsByIndustry(industry.slug);
-  const Icon = resolveIcon(industry.icon);
 
   return (
     <>
@@ -68,7 +67,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
         <Container className="grid gap-10 lg:grid-cols-[1fr_1fr]">
           <div>
             <span className="flex size-12 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-              <Icon className="size-6" />
+              <DynamicIcon name={industry.icon} className="size-6" />
             </span>
             <h2 className="mt-4 text-xl font-semibold">What Makes This Different</h2>
             <ul className="mt-4 flex flex-col gap-3">

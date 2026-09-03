@@ -10,7 +10,7 @@ import { ProductCard } from "@/components/products/product-card";
 import { products, getProduct, getRelatedProducts } from "@/data/products";
 import { getCategory } from "@/data/product-categories";
 import { getIndustry } from "@/data/industries";
-import { resolveIcon } from "@/lib/icon-map";
+import { DynamicIcon } from "@/lib/icon-map";
 import { buildMetadata, productJsonLd } from "@/lib/seo";
 
 interface PageProps {
@@ -40,7 +40,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
   const category = getCategory(product.category);
   const related = getRelatedProducts(product);
-  const Icon = resolveIcon(product.icon);
   const quoteHref = `/quote?category=${product.category}${
     product.kvaRange ? `&kva=${product.kvaRange[1]}` : ""
   }`;
@@ -76,7 +75,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         <Container className="grid gap-10 lg:grid-cols-[1fr_1fr]">
           <div>
             <span className="flex size-12 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-              <Icon className="size-6" />
+              <DynamicIcon name={product.icon} className="size-6" />
             </span>
             <h2 className="mt-4 text-xl font-semibold">Overview</h2>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">

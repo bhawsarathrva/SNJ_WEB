@@ -1,12 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { resolveIcon } from "@/lib/icon-map";
+import { DynamicIcon } from "@/lib/icon-map";
 import type { Product } from "@/types";
 
 export function ProductCard({ product }: { product: Product }) {
-  const Icon = resolveIcon(product.icon);
-
   return (
     <Link
       href={`/products/${product.slug}`}
@@ -14,7 +12,7 @@ export function ProductCard({ product }: { product: Product }) {
     >
       <div className="flex items-start justify-between gap-3">
         <span className="flex size-10 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-          <Icon className="size-5" />
+          <DynamicIcon name={product.icon} className="size-5" />
         </span>
         {product.kvaRange && (
           <span className="font-data text-xs font-semibold text-muted-foreground">

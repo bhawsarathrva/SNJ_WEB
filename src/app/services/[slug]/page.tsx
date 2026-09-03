@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/accordion";
 import { services, getService, getRelatedServices } from "@/data/services";
 import { getIndustry } from "@/data/industries";
-import { resolveIcon } from "@/lib/icon-map";
+import { DynamicIcon } from "@/lib/icon-map";
 import { buildMetadata, faqJsonLd } from "@/lib/seo";
 
 interface PageProps {
@@ -43,7 +43,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   if (!service) notFound();
 
   const related = getRelatedServices(service);
-  const Icon = resolveIcon(service.icon);
   const serviceHref = `/service-request?type=${service.slug}`;
 
   return (
@@ -73,7 +72,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         <Container className="grid gap-10 lg:grid-cols-[1fr_1fr]">
           <div>
             <span className="flex size-12 items-center justify-center rounded-lg bg-teal-soft text-teal">
-              <Icon className="size-6" />
+              <DynamicIcon name={service.icon} className="size-6" />
             </span>
             <h2 className="mt-4 text-xl font-semibold">The Problem</h2>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
@@ -170,7 +169,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <h2 className="text-xl font-semibold">Related Services</h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {related.map((item) => {
-                const RelIcon = resolveIcon(item.icon);
                 return (
                   <Link
                     key={item.slug}
@@ -178,7 +176,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     className="group flex items-start gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40"
                   >
                     <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-teal-soft text-teal">
-                      <RelIcon className="size-5" />
+                      <DynamicIcon name={item.icon} className="size-5" />
                     </span>
                     <div>
                       <h3 className="text-base font-semibold">{item.name}</h3>

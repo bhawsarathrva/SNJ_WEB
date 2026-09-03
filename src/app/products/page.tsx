@@ -6,7 +6,7 @@ import { Container } from "@/components/layout/container";
 import { PageHeader } from "@/components/layout/page-header";
 import { productCategories } from "@/data/product-categories";
 import { getProductsByCategory } from "@/data/products";
-import { resolveIcon } from "@/lib/icon-map";
+import { DynamicIcon } from "@/lib/icon-map";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -29,7 +29,6 @@ export default function ProductsPage() {
       <section className="py-16 sm:py-20">
         <Container className="grid gap-4 sm:grid-cols-2">
           {productCategories.map((category) => {
-            const Icon = resolveIcon(category.icon);
             const count = getProductsByCategory(category.slug).length;
             return (
               <Link
@@ -46,7 +45,7 @@ export default function ProductsPage() {
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <span className="absolute inset-0 flex items-center justify-center bg-black/30">
-                    <Icon className="size-6 text-white" />
+                    <DynamicIcon name={category.icon} className="size-6 text-white" />
                   </span>
                 </div>
                 <div className="flex-1">
