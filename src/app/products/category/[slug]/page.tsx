@@ -61,16 +61,46 @@ export default async function ProductCategoryPage({ params }: PageProps) {
         </div>
       </PageHeader>
 
-      <div className="relative h-56 w-full overflow-hidden sm:h-72 lg:h-80">
-        <Image
-          src={category.image}
-          alt={category.name}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
+      {/* Premium Dark Category Showcase Banner */}
+      <div className="relative h-72 w-full sm:h-84 lg:h-[26rem] overflow-hidden border-y border-slate-800 bg-slate-950 flex items-center justify-center py-8 px-4 sm:px-8">
+        {/* Radial Ambient Backlight */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(30, 64, 175, 0.35) 0%, rgba(15, 23, 42, 0.8) 55%, rgba(2, 6, 23, 1) 100%)",
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+
+        {/* Technical Grid Pattern */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.18]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.25) 1px, transparent 0)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+
+        {/* Ambient Floor Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 h-8 w-3/4 max-w-4xl bg-blue-500/20 blur-2xl rounded-full"
+        />
+
+        {/* Genset Image with High-Depth Shadows */}
+        <div className="relative z-10 h-full w-full max-w-5xl flex items-center justify-center">
+          <Image
+            src={category.image}
+            alt={category.name}
+            fill
+            priority
+            sizes="(min-width: 1280px) 1100px, 100vw"
+            className="object-contain object-center drop-shadow-[0_20px_45px_rgba(0,0,0,0.95)] drop-shadow-[0_0_35px_rgba(59,130,246,0.2)]"
+          />
+        </div>
       </div>
 
       <section className="py-16 sm:py-20">

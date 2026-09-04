@@ -7,7 +7,7 @@ export const productCategories: ProductCategory[] = [
     shortName: "Diesel Gensets",
     summary: "6 kVA to 2,500 kVA standby, prime, and continuous power sets.",
     icon: "Zap",
-    image: "/images/products/diesel-generator-sets.jpg",
+    image: "/images/products/diesel-generator-sets.png",
   },
   {
     slug: "gas-generator-sets",

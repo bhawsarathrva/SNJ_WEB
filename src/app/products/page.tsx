@@ -6,7 +6,6 @@ import { Container } from "@/components/layout/container";
 import { PageHeader } from "@/components/layout/page-header";
 import { productCategories } from "@/data/product-categories";
 import { getProductsByCategory } from "@/data/products";
-import { DynamicIcon } from "@/lib/icon-map";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -36,17 +35,16 @@ export default function ProductsPage() {
                 href={`/products/category/${category.slug}`}
                 className="group flex items-start gap-5 overflow-hidden rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40 sm:p-5"
               >
-                <div className="relative size-20 shrink-0 overflow-hidden rounded-lg">
-                  <Image
-                    src={category.image}
-                    alt={category.name}
-                    fill
-                    sizes="80px"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <span className="absolute inset-0 flex items-center justify-center bg-black/30">
-                    <DynamicIcon name={category.icon} className="size-6 text-white" />
-                  </span>
+                <div className="relative size-20 shrink-0 overflow-hidden rounded-lg bg-secondary/40 p-2 flex items-center justify-center">
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={category.image}
+                      alt={category.name}
+                      fill
+                      sizes="80px"
+                      className="object-contain transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between gap-3">

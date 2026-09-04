@@ -60,22 +60,6 @@ export function Header() {
         scrolled ? "border-border shadow-sm" : "border-transparent"
       )}
     >
-      {/* Utility strip */}
-      <div className="hidden border-b border-border bg-foreground text-background md:block">
-        <Container className="flex h-9 items-center justify-between text-xs">
-          <span className="font-data uppercase tracking-wide text-background/70">
-            {siteConfig.stats[0].value} in operation &middot; {siteConfig.stats[1].value} gensets deployed
-          </span>
-          <a
-            href={`tel:${siteConfig.emergencyPhone.replace(/\s/g, "")}`}
-            className="flex items-center gap-1.5 font-data uppercase tracking-wide text-background/90 hover:text-primary"
-          >
-            <Phone className="size-3.5" />
-            24x7 Emergency: {siteConfig.emergencyPhone}
-          </a>
-        </Container>
-      </div>
-
       <Container className="flex h-20 items-center justify-between gap-4">
         <Logo />
 
