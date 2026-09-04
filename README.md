@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SNJ Diesel Web (`SNJ_WEB`)
 
-## Getting Started
+[![CI Pipeline](https://github.com/bhawsarathrva/SNJ_WEB/actions/workflows/ci.yml/badge.svg)](https://github.com/bhawsarathrva/SNJ_WEB/actions/workflows/ci.yml)
+[![CD Pipeline](https://github.com/bhawsarathrva/SNJ_WEB/actions/workflows/cd.yml/badge.svg)](https://github.com/bhawsarathrva/SNJ_WEB/actions/workflows/cd.yml)
 
-First, run the development server:
+Enterprise web portal and product catalog for **SNJ Diesel** built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, **Tailwind CSS v4**, and **Prisma ORM** with PostgreSQL.
 
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 20+
+- npm 10+
+- Docker & Docker Compose (optional for local database container)
+
+### 1. Installation
+Clone the repository and install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/bhawsarathrva/SNJ_WEB.git
+cd SNJ_WEB
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Environment Variables
+Create a `.env` file in the root directory:
+```env
+DATABASE_URL="postgresql://snj:snj_local_password@localhost:5432/snj_diesel?schema=public"
+NEXT_PUBLIC_SITE_URL="http://localhost:3000"
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Database Setup (Docker)
+Start the local PostgreSQL container using Docker Compose:
+```bash
+docker compose up -d db
+npx prisma db push
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Development Server
+Run the Next.js development server:
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠 Available Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Starts the Next.js development server with Turbopack |
+| `npm run lint` | Runs ESLint 9 checks across the codebase |
+| `npm run typecheck` | Validates TypeScript types across the project |
+| `npm run build` | Generates Prisma client and creates an optimized production build |
+| `npm run start` | Starts the production server |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🔄 CI/CD Pipelines (GitHub Actions)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This repository is equipped with fully automated GitHub Actions CI/CD workflows:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 1. Continuous Integration (`.github/workflows/ci.yml`)
+Triggered automatically on:
+- Every `push` to `main`
+- Every `pull_request` targeting `main`
+- Manual trigger (`workflow_dispatch`)
+
+**Jobs:**
+1. **Lint & Typecheck**: Runs `npm run lint` and `npm run typecheck` with deterministic `npm ci` and Node.js caching.
+2. **Build Application**: Runs `npm run build` with build caching (`.next/cache`) to verify standalone bundle generation and SSG pre-rendering across all static routes.
+3. **Verify Docker Container Build**: Tests multi-stage `Dockerfile` compilation using Docker Buildx and GitHub Actions layer caching.
+
+### 2. Continuous Deployment (`.github/workflows/cd.yml`)
+Triggered automatically on:
+- Merging/pushing to the `main` branch
+- Publishing release tags (e.g. `v1.0.0`)
+- Manual trigger (`workflow_dispatch`)
+
+**Actions:**
+- Builds production-ready multi-platform Docker container image.
+- Tags container with `latest`, Git commit SHA (`sha-xxxxxxx`), and SemVer versions.
+- Pushes image to **GitHub Container Registry (GHCR)**:
+  ```text
+  ghcr.io/bhawsarathrva/snj_web:latest
+  ```
+
+### 3. Automated Dependency Updates (`.github/dependabot.yml`)
+- Weekly automated dependency security and version updates for `npm` packages and GitHub Actions.
+
+---
+
+## 🐳 Docker Deployment
+
+### Run with Docker Compose
+To run both the PostgreSQL database and the Next.js standalone container locally:
+```bash
+docker compose up --build -d
+```
+
+### Pull and Run from GitHub Container Registry
+```bash
+docker pull ghcr.io/bhawsarathrva/snj_web:latest
+docker run -p 3000:3000 -e DATABASE_URL="postgresql://..." ghcr.io/bhawsarathrva/snj_web:latest
+```
