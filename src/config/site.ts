@@ -18,11 +18,11 @@ export const siteConfig = {
     postalCode: "452005",
     country: "India",
   },
-  founded: 2003,
+  founded: 2014,
   stats: [
-    { label: "Years in operation", value: "20+" },
-    { label: "Gensets deployed", value: "3,400+" },
-    { label: "Service centers", value: "6" },
+    { label: "Years in operation", value: "10+" },
+    { label: "Gensets deployed", value: "500+" },
+    { label: "Satisfied clients", value: "300+" },
     { label: "Average emergency response", value: "< 3 hrs" },
   ],
   social: {

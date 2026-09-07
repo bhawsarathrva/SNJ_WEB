@@ -63,9 +63,10 @@ export const mainNav: NavGroup[] = [
   },
 ];
 
-export const headerActions: { quote: NavLink; service: NavLink } = {
-  quote: { label: "Request a Quote", href: "/quote" },
+export const headerActions: { service: NavLink; phone: NavLink; quote?: NavLink } = {
   service: { label: "Book a Service", href: "/service-request" },
+  phone: { label: "9755515060", href: "tel:9755515060" },
+  quote: { label: "Request a Quote", href: "/quote" },
 };
 
 export const footerNav: NavGroup[] = [

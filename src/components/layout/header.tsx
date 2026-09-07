@@ -22,6 +22,7 @@ import { Container } from "@/components/layout/container";
 import { mainNav, headerActions } from "@/config/nav";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { buttonVariants } from "../ui/button";
 
 export function Header() {
   const [openGroup, setOpenGroup] = useState<string | null>(null);
@@ -133,20 +134,50 @@ export function Header() {
         </nav>
 
         {/* Desktop actions */}
-        <div className="hidden items-center gap-2 lg:flex">
-          <Button variant="outline" size="sm" render={<Link href={headerActions.service.href} />}>
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href="tel:9755515060"
+            className="group inline-flex items-center gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-xs font-bold text-amber-700 transition-all hover:border-amber-500/50 hover:bg-amber-500/20 dark:border-amber-500/30 dark:bg-amber-500/15 dark:text-amber-400 dark:hover:bg-amber-500/25"
+          >
+            <span className="flex size-6 items-center justify-center rounded-md bg-amber-500 text-slate-950 shadow-xs transition-transform group-hover:scale-105">
+              <Phone className="size-3.5 fill-current" />
+            </span>
+            <span className="font-data text-sm font-bold tracking-tight text-foreground">
+              9755515060
+            </span>
+          </a>
+
+          <Link
+            href={headerActions.service.href}
+            className={buttonVariants({
+              variant: "default",
+              size: "sm",
+              className: "font-semibold shadow-xs",
+            })}
+          >
             {headerActions.service.label}
-          </Button>
-          <Button size="sm" render={<Link href={headerActions.quote.href} />}>
-            {headerActions.quote.label}
-          </Button>
+          </Link>
         </div>
 
         {/* Mobile trigger */}
         <div className="flex items-center gap-2 lg:hidden">
-          <Button size="icon-sm" render={<Link href={headerActions.quote.href} />} aria-label="Request a Quote">
-            <ArrowRight />
-          </Button>
+          <a
+            href="tel:9755515060"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2.5 py-1.5 text-xs font-bold text-amber-700 dark:text-amber-400"
+            aria-label="Call 9755515060"
+          >
+            <Phone className="size-3.5 fill-current text-amber-600 dark:text-amber-400" />
+            <span className="font-data font-bold">9755515060</span>
+          </a>
+          <Link
+            href={headerActions.service.href}
+            className={buttonVariants({
+              size: "sm",
+              className: "text-xs px-2.5",
+            })}
+          >
+            Book Service
+          </Link>
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <Button
               variant="ghost"
@@ -186,19 +217,23 @@ export function Header() {
                   ))}
                 </Accordion>
 
-                <div className="flex flex-col gap-2 border-t border-border pt-4">
-                  <Button render={<Link href={headerActions.quote.href} />}>
-                    {headerActions.quote.label}
-                  </Button>
-                  <Button variant="outline" render={<Link href={headerActions.service.href} />}>
-                    {headerActions.service.label}
-                  </Button>
-                  <a
-                    href={`tel:${siteConfig.emergencyPhone.replace(/\s/g, "")}`}
-                    className="mt-1 flex items-center justify-center gap-2 text-sm font-medium text-primary"
+                <div className="flex flex-col gap-2.5 border-t border-border pt-4">
+                  <Link
+                    href={headerActions.service.href}
+                    className={buttonVariants({
+                      variant: "default",
+                      size: "default",
+                      className: "w-full justify-center font-semibold",
+                    })}
                   >
-                    <Phone className="size-4" />
-                    24x7 Emergency: {siteConfig.emergencyPhone}
+                    {headerActions.service.label}
+                  </Link>
+                  <a
+                    href="tel:9755515060"
+                    className="flex items-center justify-center gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 py-2.5 text-sm font-bold text-amber-700 dark:text-amber-400 transition-colors hover:bg-amber-500/20"
+                  >
+                    <Phone className="size-4 fill-current" />
+                    Call: 9755515060
                   </a>
                 </div>
               </div>

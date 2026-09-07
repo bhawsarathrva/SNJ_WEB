@@ -23,9 +23,9 @@ const reasons = [
   },
   {
     icon: MapPinned,
-    title: "6 service centers, one schedule",
+    title: "Regional service network",
     description:
-      "Multi-site customers get a single AMC schedule and a single point of contact across every branch we cover.",
+      "Multi-site customers get a single AMC schedule and a dedicated point of contact across every facility we support.",
   },
 ];
 
@@ -35,7 +35,7 @@ export function WhyChooseUs() {
       <Container>
         <SectionHeading
           eyebrow="Why SNJ Diesel"
-          title="Twenty years of not being the vendor you have to chase"
+          title="Over a decade of not being the vendor you have to chase"
           align="left"
         />
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

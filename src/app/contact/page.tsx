@@ -104,9 +104,9 @@ export default function ContactPage() {
               className="group flex items-center justify-between rounded-xl border border-border bg-secondary/40 p-6 transition-colors hover:border-primary/40"
             >
               <div>
-                <h2 className="text-sm font-semibold">Find your nearest branch</h2>
+                <h2 className="text-sm font-semibold">Find your nearest service location</h2>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  {siteConfig.stats[2].value} service centers across Maharashtra.
+                  Rapid technician dispatch and service coverage across the region.
                 </p>
               </div>
               <ArrowRight className="size-4 shrink-0 text-primary transition-transform group-hover:translate-x-0.5" />

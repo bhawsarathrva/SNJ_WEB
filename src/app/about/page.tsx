@@ -11,17 +11,17 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "About SNJ Diesel",
   description:
-    "Twenty years of sizing, installing, and servicing diesel and gas generator sets across Maharashtra — from a single workshop to a 6-branch service network.",
+    "Over a decade of sizing, installing, and servicing diesel and gas generator sets — from specialized maintenance to over 500+ deployed power units.",
   path: "/about",
 });
 
 const timeline = [
-  { year: "2003", title: "Founded in Pune", description: "Started as a small repair and spare-parts workshop serving local commercial clients." },
-  { year: "2009", title: "First AMC contracts", description: "Moved from ad-hoc repair work to scheduled maintenance contracts for hospitals and offices." },
-  { year: "2013", title: "Authorized sales added", description: "Began selling and installing new generator sets alongside service, not just repairing others' units." },
-  { year: "2017", title: "Mumbai branch opened", description: "Expanded service coverage into the Mumbai Metropolitan Region." },
-  { year: "2021", title: "Rental fleet launched", description: "Added a rental generator fleet for construction, events, and bridge-power needs." },
-  { year: "2024", title: "6 service centers, 3,400+ units deployed", description: "Reached current scale across Western Maharashtra, Vidarbha, and Marathwada." },
+  { year: "2014", title: "Founded in Indore", description: "Started as a dedicated generator repair, overhaul, and power equipment engineering service." },
+  { year: "2016", title: "First Industrial AMC contracts", description: "Expanded from ad-hoc emergency repairs to scheduled maintenance contracts for industrial plants and healthcare." },
+  { year: "2018", title: "Authorized new unit sales", description: "Began sizing, supplying, and commissioning new CPCB-compliant diesel and gas generator sets." },
+  { year: "2020", title: "Regional service expansion", description: "Extended 24x7 emergency response fleet and rapid technician dispatch across industrial corridors." },
+  { year: "2022", title: "Rental fleet & turn-key power", description: "Added high-capacity rental generators and turn-key synchronization panels for critical facilities." },
+  { year: "2024", title: "500+ gensets deployed & counting", description: "Surpassed 500+ operational installations and hundreds of active AMC contracts with sub-3-hour response." },
 ];
 
 const certifications = [
@@ -36,7 +36,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About SNJ Diesel"
-        title="Twenty years of power that didn't wait for a good excuse"
+        title="Over a decade of power that didn't wait for a good excuse"
         description={siteConfig.description}
         breadcrumbs={[{ name: "About", path: "/about" }]}
       />
@@ -46,21 +46,19 @@ export default function AboutPage() {
           <div>
             <p className="eyebrow mb-2">Our Story</p>
             <h2 className="text-2xl font-semibold sm:text-3xl">
-              From a repair workshop to a full power-systems partner
+              From a dedicated workshop to a trusted power-systems partner
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              SNJ Diesel started in {siteConfig.founded} as a small genset repair and spare-parts
-              operation in Pune, working on whatever brand of generator a local business happened
-              to own. That repair-first history still shapes how we work today — we diagnose to
-              root cause before we quote, because that discipline is how a small workshop earns
-              repeat customers without a sales team pushing new units on every visit.
+              SNJ Diesel started in {siteConfig.founded} with a hands-on focus on genset maintenance,
+              overhauling, and reliable emergency support. That repair-first engineering mindset still
+              shapes how we work today — we diagnose to root cause before we quote, ensuring every
+              facility receives the exact power sizing and technical support it needs.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Over two decades, that grew into scheduled maintenance contracts, then authorized
-              new-unit sales and installation, then a rental fleet and a six-branch service
-              network. What hasn&apos;t changed is the accountability model: the team that sizes
-              your genset is the same team that installs, maintains, and repairs it — not a
-              rotating cast of subcontractors.
+              Over the past decade, that grew into scheduled maintenance contracts, authorized
+              new-unit sales, synchronization panels, and a comprehensive rental fleet. What hasn&apos;t
+              changed is our accountability model: the team that sizes your genset is the same team
+              that installs, maintains, and backs it with 24x7 emergency response.
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-8">
@@ -78,7 +76,7 @@ export default function AboutPage() {
             <div className="mt-8 border-t border-dashed border-border pt-6">
               <p className="text-sm text-muted-foreground">
                 Headquartered in {siteConfig.address.city}, {siteConfig.address.state}, with
-                service branches across Western Maharashtra, Vidarbha, and Marathwada.
+                rapid service response across key commercial and industrial hubs.
               </p>
               <Button variant="outline" className="mt-4" render={<Link href="/coverage" />}>
                 View service coverage
@@ -91,7 +89,7 @@ export default function AboutPage() {
 
       <section className="border-b border-border bg-secondary/40 py-16 sm:py-20">
         <Container>
-          <SectionHeading eyebrow="Timeline" title="Two decades, six milestones" align="left" />
+          <SectionHeading eyebrow="Timeline" title="A decade of growth, key milestones" align="left" />
           <div className="mt-10 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
             {timeline.map((item) => (
               <div key={item.year} className="flex flex-col gap-2 bg-card p-6">
