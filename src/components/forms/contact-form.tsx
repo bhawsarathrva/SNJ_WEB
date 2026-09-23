@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { FieldError } from "@/components/forms/field-error";
-import { submitContactMessage, initialActionState } from "@/lib/actions";
+import { submitContactMessage } from "@/lib/actions";
+import { initialActionState } from "@/lib/action-state";
 
 export function ContactForm() {
   const [state, formAction, isPending] = useActionState(

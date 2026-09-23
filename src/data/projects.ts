@@ -9,6 +9,17 @@ export const projects: ProjectCaseStudy[] = [
     location: "Pune, Maharashtra",
     capacity: "2 x 250 kVA (N+1)",
     year: 2024,
+    image: "/images/projects/riverside-multispecialty-hospital.jpg",
+    gallery: [
+      "/images/projects/riverside-multispecialty-hospital.jpg",
+      "/images/projects/ats-synchronizing-panel.jpg",
+      "/images/projects/on-site-commissioning.jpg",
+    ],
+    scope: [
+      "Supply of 2 x 250 kVA Silent DG Sets",
+      "Auto-Synchronizing ATS Panel Installation",
+      "Zero-Interruption Phased Commissioning",
+    ],
     summary:
       "Replaced a single aging 300 kVA genset with a synchronized N+1 pair, eliminating single-point-of-failure risk across the ICU, OT, and imaging block.",
     challenge:
@@ -30,6 +41,17 @@ export const projects: ProjectCaseStudy[] = [
     location: "Hinjewadi, Pune",
     capacity: "1 x 1,010 kVA (rental, 45 days)",
     year: 2023,
+    image: "/images/projects/greenfield-it-park-data-hall.jpg",
+    gallery: [
+      "/images/projects/greenfield-it-park-data-hall.jpg",
+      "/images/projects/ats-synchronizing-panel.jpg",
+      "/images/projects/on-site-commissioning.jpg",
+    ],
+    scope: [
+      "1,010 kVA Containerized Rental Genset",
+      "72-Hour Rapid Mobilization & Cabling",
+      "Dedicated On-Site Technician & Fuel Logistics",
+    ],
     summary:
       "Provided rental bridge power during a 45-day gap between data hall energization and permanent utility connection approval.",
     challenge:
@@ -51,6 +73,17 @@ export const projects: ProjectCaseStudy[] = [
     location: "Chakan, Pune",
     capacity: "1 x 500 kVA",
     year: 2024,
+    image: "/images/projects/auto-components-plant-expansion.jpg",
+    gallery: [
+      "/images/projects/auto-components-plant-expansion.jpg",
+      "/images/projects/ats-synchronizing-panel.jpg",
+      "/images/projects/on-site-commissioning.jpg",
+    ],
+    scope: [
+      "1 x 500 kVA Heavy-Duty Silent DG Set",
+      "LV Busduct Integration & Safety Enclosure",
+      "Full Motor-Inrush Load Testing",
+    ],
     summary:
       "Sized and installed a new 500 kVA set to cover a second production line added after the facility's original genset was already at capacity.",
     challenge:
@@ -72,6 +105,16 @@ export const projects: ProjectCaseStudy[] = [
     location: "Maharashtra state highway network",
     capacity: "12 x 62 kVA",
     year: 2022,
+    image: "/images/projects/highway-toll-plaza-network.jpg",
+    gallery: [
+      "/images/projects/highway-toll-plaza-network.jpg",
+      "/images/projects/on-site-commissioning.jpg",
+    ],
+    scope: [
+      "12 x 62 kVA Acoustic DG Sets",
+      "Identical AMF Panels & Enclosures",
+      "5-Year Audited Public SLA & AMC",
+    ],
     summary:
       "Delivered and commissioned identical 62 kVA units across 12 toll plaza sites under a single tender, with a standardized 5-year AMC.",
     challenge:
@@ -93,6 +136,16 @@ export const projects: ProjectCaseStudy[] = [
     location: "Nashik, Maharashtra",
     capacity: "1 x 250 kVA (biogas)",
     year: 2023,
+    image: "/images/projects/agri-biogas-processing-unit.jpg",
+    gallery: [
+      "/images/projects/agri-biogas-processing-unit.jpg",
+      "/images/projects/ats-synchronizing-panel.jpg",
+    ],
+    scope: [
+      "1 x 250 kVA Biogas Gas Generator Set",
+      "Automated Methane Quality & Pressure Sensing",
+      "Grid-Tie & Synchronous Alternator Setup",
+    ],
     summary:
       "Converted a cooperative's existing biogas waste stream into on-site power generation, offsetting diesel costs for their processing line.",
     challenge:
@@ -114,6 +167,16 @@ export const projects: ProjectCaseStudy[] = [
     location: "Lonavala, Maharashtra",
     capacity: "1 x 125 kVA",
     year: 2024,
+    image: "/images/projects/boutique-resort-noise-retrofit.jpg",
+    gallery: [
+      "/images/projects/boutique-resort-noise-retrofit.jpg",
+      "/images/projects/on-site-commissioning.jpg",
+    ],
+    scope: [
+      "Custom 125 kVA Silent Acoustic Canopy",
+      "Exhaust Silencer Dampening System",
+      "14 dB(A) Attenuation at Guest Villas",
+    ],
     summary:
       "Retrofitted an existing open-skid 125 kVA genset with an acoustic canopy after guest complaints during peak season power cuts.",
     challenge:

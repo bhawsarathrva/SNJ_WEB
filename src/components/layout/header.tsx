@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Phone, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, Phone, ArrowRight, ChevronDown, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -20,7 +20,6 @@ import {
 import { Logo } from "@/components/layout/logo";
 import { Container } from "@/components/layout/container";
 import { mainNav, headerActions } from "@/config/nav";
-import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 
@@ -65,7 +64,7 @@ export function Header() {
         <Logo />
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex lg:items-center lg:gap-1">
+        <nav className="hidden lg:flex lg:items-center lg:gap-0.5 xl:gap-1">
           {mainNav.map((group) => (
             <div
               key={group.label}
@@ -73,27 +72,51 @@ export function Header() {
               onMouseEnter={() => openNow(group.label)}
               onMouseLeave={closeSoon}
             >
-              <button
-                type="button"
-                className={cn(
-                  "flex items-center gap-1 rounded-md px-3 py-2 text-base font-bold text-foreground/85 transition-colors hover:bg-muted hover:text-foreground",
-                  openGroup === group.label && "bg-muted text-foreground"
-                )}
-                aria-expanded={openGroup === group.label}
-                onClick={() =>
-                  setOpenGroup(openGroup === group.label ? null : group.label)
-                }
-              >
-                {group.label}
-                <ChevronDown
+              {group.href ? (
+                <Link
+                  href={group.href}
                   className={cn(
-                    "size-3.5 transition-transform",
-                    openGroup === group.label && "rotate-180"
+                    "flex items-center gap-1 rounded-md px-2.5 xl:px-3 py-2 text-sm xl:text-base font-bold text-foreground/85 transition-colors hover:bg-muted hover:text-foreground",
+                    openGroup === group.label && "bg-muted text-foreground"
                   )}
-                />
-              </button>
+                  aria-expanded={openGroup === group.label}
+                  onClick={() => setOpenGroup(null)}
+                >
+                  {group.label}
+                  {group.items && group.items.length > 0 && (
+                    <ChevronDown
+                      className={cn(
+                        "size-3.5 transition-transform",
+                        openGroup === group.label && "rotate-180"
+                      )}
+                    />
+                  )}
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  className={cn(
+                    "flex items-center gap-1 rounded-md px-2.5 xl:px-3 py-2 text-sm xl:text-base font-bold text-foreground/85 transition-colors hover:bg-muted hover:text-foreground",
+                    openGroup === group.label && "bg-muted text-foreground"
+                  )}
+                  aria-expanded={openGroup === group.label}
+                  onClick={() =>
+                    setOpenGroup(openGroup === group.label ? null : group.label)
+                  }
+                >
+                  {group.label}
+                  {group.items && group.items.length > 0 && (
+                    <ChevronDown
+                      className={cn(
+                        "size-3.5 transition-transform",
+                        openGroup === group.label && "rotate-180"
+                      )}
+                    />
+                  )}
+                </button>
+              )}
 
-              {openGroup === group.label && (
+              {openGroup === group.label && group.items && group.items.length > 0 && (
                 <div
                   className="absolute left-0 top-full z-50 w-[340px] pt-2"
                   onMouseEnter={() => openNow(group.label)}
@@ -137,7 +160,7 @@ export function Header() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href="tel:9755515060"
-            className="group inline-flex items-center gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-xs font-bold text-amber-700 transition-all hover:border-amber-500/50 hover:bg-amber-500/20 dark:border-amber-500/30 dark:bg-amber-500/15 dark:text-amber-400 dark:hover:bg-amber-500/25"
+            className="group inline-flex h-9 items-center gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 text-xs font-bold text-amber-700 transition-all hover:border-amber-500/50 hover:bg-amber-500/20 dark:border-amber-500/30 dark:bg-amber-500/15 dark:text-amber-400 dark:hover:bg-amber-500/25"
           >
             <span className="flex size-6 items-center justify-center rounded-md bg-amber-500 text-slate-950 shadow-xs transition-transform group-hover:scale-105">
               <Phone className="size-3.5 fill-current" />
@@ -149,13 +172,12 @@ export function Header() {
 
           <Link
             href={headerActions.service.href}
-            className={buttonVariants({
-              variant: "default",
-              size: "sm",
-              className: "font-semibold shadow-xs",
-            })}
+            className="group inline-flex h-9 items-center gap-2 rounded-lg bg-primary px-3 text-sm font-semibold text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
           >
-            {headerActions.service.label}
+            <span className="flex size-6 items-center justify-center rounded-md bg-white/20 text-white shadow-xs transition-transform group-hover:scale-105">
+              <Wrench className="size-3.5" />
+            </span>
+            <span>{headerActions.service.label}</span>
           </Link>
         </div>
 
@@ -163,7 +185,7 @@ export function Header() {
         <div className="flex items-center gap-2 lg:hidden">
           <a
             href="tel:9755515060"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2.5 py-1.5 text-xs font-bold text-amber-700 dark:text-amber-400"
+            className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2.5 text-xs font-bold text-amber-700 dark:text-amber-400"
             aria-label="Call 9755515060"
           >
             <Phone className="size-3.5 fill-current text-amber-600 dark:text-amber-400" />
@@ -171,12 +193,10 @@ export function Header() {
           </a>
           <Link
             href={headerActions.service.href}
-            className={buttonVariants({
-              size: "sm",
-              className: "text-xs px-2.5",
-            })}
+            className="inline-flex h-8 items-center gap-1.5 rounded-lg bg-primary px-2.5 text-xs font-semibold text-primary-foreground"
           >
-            Book Service
+            <Wrench className="size-3.5" />
+            <span>Book Service</span>
           </Link>
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <Button
@@ -201,6 +221,16 @@ export function Header() {
                       </AccordionTrigger>
                       <AccordionContent>
                         <ul className="flex flex-col gap-1 pl-2">
+                          {group.href && (
+                            <li>
+                              <Link
+                                href={group.href}
+                                className="block rounded-md px-2 py-1.5 text-xs font-bold text-primary hover:bg-muted"
+                              >
+                                View All {group.label} →
+                              </Link>
+                            </li>
+                          )}
                           {group.items.map((item) => (
                             <li key={item.href}>
                               <Link

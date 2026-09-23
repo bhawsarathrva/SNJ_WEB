@@ -61,10 +61,15 @@ export default function ContactPage() {
               <ul className="flex flex-col gap-4 text-sm">
                 <li className="flex items-start gap-3">
                   <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
-                  <span>
+                  <a
+                    href={siteConfig.address.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
                     {siteConfig.address.line1}, {siteConfig.address.city},{" "}
                     {siteConfig.address.state} {siteConfig.address.postalCode}
-                  </span>
+                  </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="size-4 shrink-0 text-primary" />

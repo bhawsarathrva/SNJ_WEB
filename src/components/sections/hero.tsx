@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Calculator, ShieldCheck } from "lucide-react";
+import { ArrowRight, Wrench, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { siteConfig } from "@/config/site";
@@ -89,10 +89,10 @@ export function Hero() {
                   size="lg"
                   variant="outline"
                   className="h-11 sm:h-12 px-5 sm:px-6 text-sm sm:text-base font-semibold border-white/20 bg-white/10 hover:bg-white/15 text-white backdrop-blur-sm"
-                  render={<Link href="/tools/calculator" />}
+                  render={<Link href="/service-request" />}
                 >
-                  <Calculator className="size-4" />
-                  Size My Generator
+                  <Wrench className="size-4" />
+                  Book a Service
                 </Button>
               </div>
 

@@ -89,6 +89,9 @@ export interface ProjectCaseStudy {
   solution: string;
   results: string[];
   productCategory: ProductCategorySlug;
+  image: string;
+  gallery?: string[];
+  scope?: string[];
 }
 
 export interface BlogPost {

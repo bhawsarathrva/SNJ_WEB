@@ -17,10 +17,15 @@ export function Footer() {
           <ul className="flex flex-col gap-3 text-base text-background/85">
             <li className="flex items-start gap-2.5">
               <MapPin className="mt-0.5 size-5 shrink-0 text-primary" />
-              <span>
+              <a
+                href={siteConfig.address.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors inline-block"
+              >
                 {siteConfig.address.line1}, {siteConfig.address.city},{" "}
                 {siteConfig.address.state} {siteConfig.address.postalCode}
-              </span>
+              </a>
             </li>
             <li className="flex items-center gap-2.5">
               <Phone className="size-5 shrink-0 text-primary" />

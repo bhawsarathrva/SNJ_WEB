@@ -4,7 +4,6 @@ import { ProductsOverview } from "@/components/sections/products-overview";
 import { ServicesOverview } from "@/components/sections/services-overview";
 import { IndustriesStrip } from "@/components/sections/industries-strip";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
-import { CalculatorTeaser } from "@/components/sections/calculator-teaser";
 import { ProjectsShowcase } from "@/components/sections/projects-showcase";
 import { FaqPreview } from "@/components/sections/faq-preview";
 import { FinalCta } from "@/components/sections/final-cta";
@@ -25,7 +24,6 @@ export default function HomePage() {
       <ServicesOverview />
       <IndustriesStrip />
       <WhyChooseUs />
-      <CalculatorTeaser />
       <ProjectsShowcase />
       <FaqPreview />
       <FinalCta />

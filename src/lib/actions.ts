@@ -7,20 +7,12 @@ import {
   contactSchema,
 } from "@/lib/validations";
 
-export interface ActionState {
-  status: "idle" | "success" | "error";
-  message: string;
-  errors?: Record<string, string[]>;
-  ticketNumber?: string;
-}
-
-export const initialActionState: ActionState = { status: "idle", message: "" };
-
-function generateTicketNumber() {
-  const stamp = Date.now().toString(36).toUpperCase();
-  const rand = Math.random().toString(36).slice(2, 6).toUpperCase();
-  return `SR-${stamp}-${rand}`;
-}
+import {
+  buildServiceWhatsAppUrl,
+  generateTicketNumber,
+  type ServiceBookingWhatsAppDetails,
+} from "@/lib/whatsapp";
+import type { ActionState } from "@/lib/action-state";
 
 const urgencyMap = {
   standard: "STANDARD",
@@ -88,7 +80,27 @@ export async function submitServiceRequest(
     };
   }
 
-  const ticketNumber = generateTicketNumber();
+  const clientTicket = (formData.get("ticketNumber") as string | null)?.trim();
+  const ticketNumber = clientTicket && clientTicket.startsWith("SR-")
+    ? clientTicket
+    : generateTicketNumber();
+
+  const bookingDetails: ServiceBookingWhatsAppDetails = {
+    ticketNumber,
+    name: parsed.data.name,
+    phone: parsed.data.phone,
+    email: parsed.data.email,
+    requestType: parsed.data.requestType,
+    machineModel: parsed.data.machineModel || undefined,
+    serialNumber: parsed.data.serialNumber || undefined,
+    city: parsed.data.city,
+    address: parsed.data.address || undefined,
+    preferredDate: parsed.data.preferredDate || undefined,
+    urgency: parsed.data.urgency,
+    message: parsed.data.message || undefined,
+  };
+
+  const whatsappUrl = buildServiceWhatsAppUrl(bookingDetails);
 
   try {
     await prisma.serviceRequest.create({
@@ -110,18 +122,16 @@ export async function submitServiceRequest(
       },
     });
   } catch (error) {
-    console.error("submitServiceRequest failed", error);
-    return {
-      status: "error",
-      message:
-        "We couldn't submit your request online. For urgent breakdowns, please call our 24x7 line directly.",
-    };
+    // Keep booking flow working even if local DB is unreachable
+    console.error("submitServiceRequest prisma save failed (continuing to WhatsApp flow):", error);
   }
 
   return {
     status: "success",
-    message: `Request received — ticket ${ticketNumber}. Our nearest service center will call you shortly.`,
+    message: `Request received — ticket ${ticketNumber}. Details forwarded to WhatsApp (+91 9755515060).`,
     ticketNumber,
+    whatsappUrl,
+    bookingDetails,
   };
 }
 

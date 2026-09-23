@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Calculator } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { PageHeader } from "@/components/layout/page-header";
 import { Button } from "@/components/ui/button";
@@ -50,13 +50,12 @@ export default async function ProductCategoryPage({ params }: PageProps) {
         ]}
       >
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button size="sm" render={<Link href="/tools/calculator" />}>
-            <Calculator className="size-4" />
-            Size My Requirement
+          <Button size="sm" render={<Link href={`/quote?category=${category.slug}`} />}>
+            Request a Quote
+            <ArrowRight className="size-4" />
           </Button>
           <Button size="sm" variant="outline" render={<Link href="/tools/compare" />}>
             Compare Models
-            <ArrowRight className="size-4" />
           </Button>
         </div>
       </PageHeader>

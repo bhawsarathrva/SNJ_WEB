@@ -18,8 +18,8 @@ export const blogPosts: BlogPost[] = [
       "A 20–25% margin over your calculated running load is standard practice. This isn't padding — it accounts for diversity assumptions that don't hold under real conditions, and it gives the alternator headroom so it isn't running at the edge of its rating continuously, which shortens its service life.",
       "## Convert kW to kVA correctly",
       "Gensets are rated in kVA, and the conversion from your calculated kW load depends on your power factor — typically 0.8 for mixed commercial and industrial loads. Dividing your kW figure by 0.8 gives you the kVA rating to size against, not simply matching the numbers directly.",
-      "## When in doubt, use a calculator built for this",
-      "Our [power requirement calculator](/tools/calculator) runs this exact process — enter your load list or a quick facility-type estimate, and it returns a recommended kVA rating along with matching models from our catalog.",
+      "## When in doubt, speak to our engineering team",
+      "Our team can size your requirement accurately — share your load list or equipment details in our [quote request form](/quote), and we will recommend the optimal kVA rating along with matching models from our catalog.",
     ],
   },
   {

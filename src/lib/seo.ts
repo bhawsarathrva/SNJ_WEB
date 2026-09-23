@@ -60,6 +60,7 @@ export function organizationJsonLd() {
       postalCode: siteConfig.address.postalCode,
       addressCountry: siteConfig.address.country,
     },
+    hasMap: siteConfig.address.mapUrl,
     sameAs: Object.values(siteConfig.social),
   };
 }

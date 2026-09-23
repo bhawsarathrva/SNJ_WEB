@@ -27,6 +27,47 @@ export const mainNav: NavGroup[] = [
     ],
   },
   {
+    label: "Projects",
+    href: "/projects",
+    items: [
+      {
+        label: "All Previous Work & Photo Gallery",
+        href: "/projects",
+        description: "500+ verified installations & full site photo gallery",
+      },
+      {
+        label: "Hospital N+1 Backup (2x250 kVA)",
+        href: "/projects/riverside-multispecialty-hospital",
+        description: "Multi-specialty hospital ICU & OT standby setup",
+      },
+      {
+        label: "IT Park Data Hall Bridge (1,010 kVA)",
+        href: "/projects/greenfield-it-park-data-hall",
+        description: "Mobile containerized rental genset deployment",
+      },
+      {
+        label: "Automotive Plant Expansion (500 kVA)",
+        href: "/projects/auto-components-plant-expansion",
+        description: "Tier-1 plant with LV busduct & AMF synchronization",
+      },
+      {
+        label: "Highway Toll Plaza Network (12x62 kVA)",
+        href: "/projects/highway-toll-plaza-network",
+        description: "State highway multi-site canopy installation",
+      },
+      {
+        label: "Biogas Renewable Energy (250 kVA)",
+        href: "/projects/agri-biogas-processing-unit",
+        description: "Agri-waste biogas-to-power generator system",
+      },
+      {
+        label: "Resort Acoustic Retrofit (125 kVA)",
+        href: "/projects/boutique-resort-noise-retrofit",
+        description: "Ultra-silent canopy with 14 dB(A) noise reduction",
+      },
+    ],
+  },
+  {
     label: "Industries",
     href: "/industries",
     items: [
@@ -45,7 +86,6 @@ export const mainNav: NavGroup[] = [
     label: "Tools",
     href: "/tools",
     items: [
-      { label: "Power Requirement Calculator", href: "/tools/calculator", description: "Size a genset from your actual load" },
       { label: "Compare Generator Models", href: "/tools/compare", description: "Side-by-side spec comparison" },
       { label: "Service Coverage Map", href: "/coverage", description: "Find your nearest service center" },
     ],
@@ -55,7 +95,6 @@ export const mainNav: NavGroup[] = [
     href: "/about",
     items: [
       { label: "About SNJ Diesel", href: "/about" },
-      { label: "Projects & Case Studies", href: "/projects" },
       { label: "Resources & Blog", href: "/resources/blog" },
       { label: "FAQ", href: "/resources/faq" },
       { label: "Contact", href: "/contact" },
@@ -96,7 +135,7 @@ export const footerNav: NavGroup[] = [
     label: "Company",
     items: [
       { label: "About Us", href: "/about" },
-      { label: "Projects & Case Studies", href: "/projects" },
+      { label: "Previous Work & Projects", href: "/projects" },
       { label: "Resources & Blog", href: "/resources/blog" },
       { label: "FAQ", href: "/resources/faq" },
       { label: "Contact", href: "/contact" },
@@ -105,7 +144,6 @@ export const footerNav: NavGroup[] = [
   {
     label: "Tools & Support",
     items: [
-      { label: "Power Requirement Calculator", href: "/tools/calculator" },
       { label: "Compare Generator Models", href: "/tools/compare" },
       { label: "Service Coverage Map", href: "/coverage" },
       { label: "Request a Quote", href: "/quote" },

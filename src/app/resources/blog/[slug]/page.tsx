@@ -104,15 +104,15 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="flex flex-col items-center gap-4 rounded-xl border border-border bg-card p-8 text-center">
             <h2 className="text-lg font-semibold">Have a sizing question of your own?</h2>
             <p className="text-sm text-muted-foreground">
-              Use the calculator, or send us your requirement directly.
+              Speak with our engineers directly, or send us your load requirement for an expert recommendation.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Button render={<Link href="/tools/calculator" />}>
-                Open Calculator
+              <Button render={<Link href="/quote" />}>
+                Request a Quote
                 <ArrowRight className="size-4" />
               </Button>
-              <Button variant="outline" render={<Link href="/quote" />}>
-                Request a Quote
+              <Button variant="outline" render={<Link href="/contact" />}>
+                Contact Engineering
               </Button>
             </div>
           </div>

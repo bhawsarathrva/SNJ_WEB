@@ -5,7 +5,7 @@ export const faqItems: FaqItem[] = [
     category: "Buying",
     question: "How do I know what size generator I need?",
     answer:
-      "Use our free Power Requirement Calculator — enter a detailed load list or a quick facility-type estimate, and it recommends a kVA rating along with matching models. For anything above 250 kVA, we recommend a site visit to confirm the number before ordering.",
+      "Share your connected load or facility type with our engineering team through our quote form or phone support. We will calculate the exact kVA rating needed, accounting for starting inrush and safety margins. For installations above 250 kVA, our engineers can conduct an on-site load assessment.",
   },
   {
     category: "Buying",

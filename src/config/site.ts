@@ -17,6 +17,7 @@ export const siteConfig = {
     state: "Madhya Pradesh",
     postalCode: "452005",
     country: "India",
+    mapUrl: "https://maps.app.goo.gl/ZmP41DrncsBs2DBS9",
   },
   founded: 2014,
   stats: [

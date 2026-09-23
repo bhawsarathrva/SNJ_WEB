@@ -15,7 +15,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { FieldError } from "@/components/forms/field-error";
-import { submitQuoteRequest, initialActionState } from "@/lib/actions";
+import { submitQuoteRequest } from "@/lib/actions";
+import { initialActionState } from "@/lib/action-state";
 import { productCategories } from "@/data/product-categories";
 import { industries } from "@/data/industries";
 

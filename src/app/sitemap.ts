@@ -22,7 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/industries",
     "/projects",
     "/tools",
-    "/tools/calculator",
     "/tools/compare",
     "/coverage",
     "/resources/blog",
