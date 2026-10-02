@@ -38,10 +38,18 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "dotenv": "^17.4.2",
-    "eslint": "^9",
+    "eslint": "^9.39.5",
     "eslint-config-next": "16.3.2",
     "prisma": "^7.9.1",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "prisma": true,
+    "@prisma/engines": true,
+    "unrs-resolver": true,
+    "prisma@7.9.1": true,
+    "unrs-resolver@1.12.2": true,
+    "@prisma/engines@7.9.1": true
   }
 }

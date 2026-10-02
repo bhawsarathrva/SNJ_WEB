@@ -4,7 +4,7 @@ export const products: Product[] = [
   // ---------------- Diesel Generator Sets ----------------
   {
     slug: "snj-dg-40",
-    name: "SNJ DG-40",
+    name: "DG-40",
     category: "diesel-generator-sets",
     tagline: "40 kVA silent diesel genset for small commercial sites.",
     description:
@@ -32,7 +32,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-dg-82",
-    name: "SNJ DG-82",
+    name: "DG-82",
     category: "diesel-generator-sets",
     tagline: "82.5 kVA genset for mid-size commercial and residential complexes.",
     description:
@@ -60,7 +60,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-dg-125",
-    name: "SNJ DG-125",
+    name: "DG-125",
     category: "diesel-generator-sets",
     tagline: "125 kVA workhorse for hospitals, hotels, and factories.",
     description:
@@ -88,7 +88,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-dg-250",
-    name: "SNJ DG-250",
+    name: "DG-250",
     category: "diesel-generator-sets",
     tagline: "250 kVA genset for data halls and multi-specialty hospitals.",
     description:
@@ -116,7 +116,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-dg-500",
-    name: "SNJ DG-500",
+    name: "DG-500",
     category: "diesel-generator-sets",
     tagline: "500 kVA genset for industrial plants and large commercial towers.",
     description:
@@ -144,7 +144,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-dg-1010",
-    name: "SNJ DG-1010",
+    name: "DG-1010",
     category: "diesel-generator-sets",
     tagline: "1,010 kVA genset for large industrial and infrastructure sites.",
     description:
@@ -174,7 +174,7 @@ export const products: Product[] = [
   // ---------------- Gas Generator Sets ----------------
   {
     slug: "snj-ng-63",
-    name: "SNJ NG-63",
+    name: "NG-63",
     category: "gas-generator-sets",
     tagline: "63 kVA natural gas genset for continuous commercial power.",
     description:
@@ -201,7 +201,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-ng-250",
-    name: "SNJ NG-250",
+    name: "NG-250",
     category: "gas-generator-sets",
     tagline: "250 kVA gas genset for industrial base-load and biogas sites.",
     description:
@@ -228,7 +228,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-ng-500",
-    name: "SNJ NG-500",
+    name: "NG-500",
     category: "gas-generator-sets",
     tagline: "500 kVA gas genset for continuous industrial power.",
     description:
@@ -257,7 +257,7 @@ export const products: Product[] = [
   // ---------------- Industrial Diesel Engines ----------------
   {
     slug: "snj-ie-100",
-    name: "SNJ IE-100",
+    name: "IE-100",
     category: "industrial-diesel-engines",
     tagline: "Bare-shaft 100 kW diesel engine for pump and compressor drives.",
     description:
@@ -283,7 +283,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-ie-250",
-    name: "SNJ IE-250",
+    name: "IE-250",
     category: "industrial-diesel-engines",
     tagline: "250 kW industrial engine for heavy pump and marine auxiliary use.",
     description:
@@ -309,7 +309,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-ie-500",
-    name: "SNJ IE-500",
+    name: "IE-500",
     category: "industrial-diesel-engines",
     tagline: "500 kW industrial engine for large-scale OEM applications.",
     description:
@@ -337,7 +337,7 @@ export const products: Product[] = [
   // ---------------- Controls & Accessories ----------------
   {
     slug: "snj-amf-panel",
-    name: "SNJ AMF Control Panel",
+    name: "AMF Control Panel",
     category: "controls-accessories",
     tagline: "Automatic Mains Failure panel with remote monitoring.",
     description:
@@ -362,7 +362,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-ats-panel",
-    name: "SNJ ATS Breaker Panel",
+    name: "ATS Breaker Panel",
     category: "controls-accessories",
     tagline: "Automatic transfer switch for seamless source changeover.",
     description:
@@ -387,7 +387,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-sync-panel",
-    name: "SNJ Synchronizing Panel",
+    name: "Synchronizing Panel",
     category: "controls-accessories",
     tagline: "Load-sharing and synchronizing control for multi-genset sites.",
     description:
@@ -412,7 +412,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-acoustic-canopy",
-    name: "SNJ Acoustic Canopy",
+    name: "Acoustic Canopy",
     category: "controls-accessories",
     tagline: "Weatherproof, sound-attenuated enclosure retrofit.",
     description:
@@ -437,7 +437,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-avr-module",
-    name: "SNJ AVR Replacement Module",
+    name: "AVR Replacement Module",
     category: "controls-accessories",
     tagline: "Automatic voltage regulator for alternator output stability.",
     description:
@@ -575,7 +575,7 @@ export const products: Product[] = [
   // ---------------- Used & Refurbished ----------------
   {
     slug: "snj-used-dg-125",
-    name: "SNJ Certified DG-125 (Refurbished)",
+    name: "Certified DG-125 (Refurbished)",
     category: "used-refurbished",
     tagline: "125 kVA unit, inspected, load-tested, 6-month warranty.",
     description:
@@ -599,7 +599,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-used-dg-250",
-    name: "SNJ Certified DG-250 (Refurbished)",
+    name: "Certified DG-250 (Refurbished)",
     category: "used-refurbished",
     tagline: "250 kVA unit, inspected, load-tested, 6-month warranty.",
     description:
@@ -623,7 +623,7 @@ export const products: Product[] = [
   },
   {
     slug: "snj-used-dg-500",
-    name: "SNJ Certified DG-500 (Refurbished)",
+    name: "Certified DG-500 (Refurbished)",
     category: "used-refurbished",
     tagline: "500 kVA unit, inspected, load-tested, 6-month warranty.",
     description:
